@@ -1,6 +1,7 @@
 const fs = require('fs');
 const os = require('os');
 const _ = require('lodash');
+const yargs = require('yargs');
 
 const notes = require('./notes');
 
@@ -18,3 +19,17 @@ var filteredArray = _.uniq(arr);
 
 console.log(filteredArray);
 //console.log('Hello Nodemon');
+
+const argv = yargs.argv;
+var command = process.argv[2];
+console.log(command);
+
+if(command === 'add') {
+    console.log('Add Notes');
+} else if(command === 'list') {
+    console.log('Listing Notes');
+} else if(command === 'remove') {
+    console.log('Remove Notes');
+} else {
+    console.log('Command Not Recognized');
+}
