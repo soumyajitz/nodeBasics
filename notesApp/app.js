@@ -33,3 +33,16 @@ if(command === 'add') {
 } else {
     console.log('Command Not Recognized');
 }
+
+// Utils inherits method
+
+var inherits = require('util').inherits;
+
+function A(){}
+function B(){}
+
+var b = new B(); // var b = Object.create(B);
+inherits(B,A);
+
+console.log(b instanceof B);
+console.log(b instanceof A);
